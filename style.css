@@ -94,4 +94,6 @@ li::marker {
     background-color: rgb(0, 0, 0);
 }
 
-li {}
+li {
+    padding: 12px;
+}
