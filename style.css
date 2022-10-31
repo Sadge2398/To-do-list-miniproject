@@ -21,7 +21,7 @@
     min-height: 100hv;
     border: 1px none black;
     border-radius: 12px;
-    box-shadow: 3px 4px 6px;
+    box-shadow: 3px 4px 12px 3px;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
