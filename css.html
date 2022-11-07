@@ -1,52 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>To Do List</title>
-    <link rel="stylesheet" href="./style.css">
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>To Do List</title>
+        <link rel="stylesheet" href="./style.css">
+    </head>
 
-<body class="main">
-    <div class="header">
-        <div class="center">
-            <h2 class="title">To Do List ...</h2><br>
-            <form action="">
-            <div class="label">
-                <input class="input" type="text" name="ADD" id="ADD" placeholder="You'r next move:)">
+    <body class="main">
+        <div class="header">
+            <div class="center">
+                <h2 class="title">To Do List ...</h2><br>
+                <form action="#" id="todo-form" method="get" name="todo" onsubmit="return validateForm()">
+                    <div class="label">
+                        <input class="input" type="text" name="ADD" id="ADD" placeholder="You'r next move:)">
 
-                <button class="add" type="submit"><strong></strong></button>
+                        <button class="add" type="submit"><strong></strong></button>
+                    </div>
+                </form>
+                <br>
+
+                <ol class="list" id="todoList">
+                    <!-- <li>
+                        <strong>Item 1</strong>
+                    </li> -->
+                    <!-- <hr> -->
+                </ol>
+
             </div>
-        </form>
-            <br>
-
-            <ol class="list">
-                <li><strong>Item 1</strong></li>
-                <hr>
-                <li><strong>Item 2</strong></li>
-                <hr>
-                <li><strong>Item 3</strong></li>
-                <hr>
-                <li><strong>Item 4</strong></li>
-                <hr>
-                <li><strong>Item 5</strong></li>
-                <hr>
-                <li><strong>Item 6</strong></li>
-                <hr>
-                <li><strong>Item 7</strong></li>
-                <hr>
-                <li><strong>Item 8</strong></li>
-                <hr>
-                <li><strong>Item 9</strong></li>
-                <hr>
-                <li><strong>Item 10</strong></li>
-                <hr>
-            </ol>
         </div>
-    </div>
 
-</body>
+        <script>
+            const form = document.getElementById('todo-form')
+            form.addEventListener('submit', (event) => {
+                event.preventDefault()
+                const add = document.getElementById('ADD')
+                const todoList = document.getElementById('todoList')
+                const newTodo = document.createElement('li')
+                newTodo.innerHTML = '<strong>' + add.value + '</strong> <hr>'
+                todoList.appendChild(newTodo)
+            })
+
+            function validateForm() {
+  const validation = document.querySelector('form').value;
+  if (validation == "" || validation == null) {
+    alert("Name must be filled out");
+    return false;
+  }
+}
+        </script>
+    </body>
 
 </html>
